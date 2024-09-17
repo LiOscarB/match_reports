@@ -5,6 +5,7 @@ import pandas as pd
 import json
 import requests
 import ollama
+import os
 
 class Scraper:
     def __init__(self, url: str):
@@ -339,9 +340,10 @@ class Streamlit:
     
 class Orchestrator:
     """Class to orchestrate the scraping, processing, and display of match data."""
-    def __init__(self, url_array):
+    def __init__(self):
         """Initialize with components for scraping, processing, and display."""
-        self.Scraper = Scraper(url_array)
+        url = os.getenv('MATCH_URL', 'https://www.sofascore.com/football/match/liverpool-manchester-united/KU#id:12436920')
+        self.Scraper = Scraper(url)
         self.Preprocessor = Preprocessor()
         self.Streamlit = Streamlit()
         self.LLM = LLM()
@@ -368,8 +370,7 @@ class Orchestrator:
         
         
      
-if __name__ == "__main__":
-    url = "https://www.sofascore.com/football/match/liverpool-nottingham-forest/osU#id:12436944" 
-    orchestrator = Orchestrator(url)
+if __name__ == "__main__": 
+    orchestrator = Orchestrator()
     orchestrator.run()        
 
