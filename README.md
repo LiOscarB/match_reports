@@ -26,4 +26,5 @@ run.ipynb will have separate code chunks to run the script, and upload the match
 ### Additional Notes:
 
 - **Repository URL**: https://github.com/LiOscarB/match_reports
+- **Link to Notion**: https://www.notion.so/10ce4bed6e8b8030ae65d0e112292536?v=b96c97621dee42cca77ff9164b80bc3b&pvs=4
 - **Contact Email**: pyrous437@hotmail.com
